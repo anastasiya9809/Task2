@@ -1,4 +1,4 @@
-package com.epam.gem;
+package com.epam.gem.entity;
 
 public class Gem {
     private int id;

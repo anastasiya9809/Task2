@@ -1,5 +1,8 @@
 package com.epam.gem;
 
+import com.epam.gem.entity.*;
+import com.epam.gem.exception.GemException;
+import com.epam.gem.logic.ParserSAX;
 import org.junit.Assert;
 import org.junit.Test;
 

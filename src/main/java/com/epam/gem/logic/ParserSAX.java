@@ -1,5 +1,7 @@
-package com.epam.gem;
+package com.epam.gem.logic;
 
+import com.epam.gem.exception.GemException;
+import com.epam.gem.entity.Gem;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;

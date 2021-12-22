@@ -1,5 +1,6 @@
-package com.epam.gem;
+package com.epam.gem.logic;
 
+import com.epam.gem.entity.*;
 import org.xml.sax.Attributes;
 import org.xml.sax.helpers.DefaultHandler;
 

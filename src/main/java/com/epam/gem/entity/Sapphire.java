@@ -1,6 +1,4 @@
-package com.epam.gem;
-
-import java.util.Objects;
+package com.epam.gem.entity;
 
 public class Sapphire extends Gem {
 
@@ -8,8 +6,8 @@ public class Sapphire extends Gem {
 
     public Sapphire() {}
 
-    public Sapphire(int id, String name, Preciousness preciousness, String origin, 
-                   double transparency, double value, String color) {
+    public Sapphire(int id, String name, Preciousness preciousness, String origin,
+                    double transparency, double value, String color) {
         super(id, name, preciousness, origin, transparency, value);
         this.color = color;
     }

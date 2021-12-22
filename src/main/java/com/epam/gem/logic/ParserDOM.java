@@ -1,5 +1,7 @@
-package com.epam.gem;
+package com.epam.gem.logic;
 
+import com.epam.gem.exception.GemException;
+import com.epam.gem.entity.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;

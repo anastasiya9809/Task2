@@ -1,6 +1,4 @@
-package com.epam.gem;
-
-import java.util.Objects;
+package com.epam.gem.entity;
 
 public class Diamond extends Gem {
 
@@ -9,7 +7,7 @@ public class Diamond extends Gem {
     public Diamond() {}
 
     public Diamond(int id, String name, Preciousness preciousness, String origin,
-                    double transparency, double value, CrystalShape crystalShape) {
+                   double transparency, double value, CrystalShape crystalShape) {
         super(id, name, preciousness, origin, transparency, value);
         this.crystalShape = crystalShape;
     }
