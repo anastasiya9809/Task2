@@ -1,7 +1,5 @@
 package com.epam.gem;
 
-import java.util.Objects;
-
 public class Gem {
     private int id;
     private String name;
