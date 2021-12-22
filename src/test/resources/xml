@@ -1,0 +1,32 @@
+<gems>
+     <gem id="1">
+        <name>star_ruby</name>
+        <preciousness>PRECIOUS</preciousness>
+        <origin>Myanmar</origin>
+        <transparency>5</transparency>
+        <value>1</value>
+     </gem>
+     <gem id="2">
+        <name>colombian_emerald</name>
+        <preciousness>SEMIPRECIOUS</preciousness>
+        <origin>Colombia</origin>
+        <transparency>20</transparency>
+        <value>2</value>
+     </gem>
+     <diamond id="3">
+         <name>white_diamond</name>
+         <preciousness>PRECIOUS</preciousness>
+         <origin>Botswana</origin>
+         <transparency>50</transparency>
+         <value>0.5</value>
+         <crystal_shape>OCTAHEDRAL</crystal_shape>
+     </diamond>
+     <sapphire id="4">
+         <name>blue_sapphire</name>
+         <preciousness>SEMIPRECIOUS</preciousness>
+         <origin>Australia</origin>
+         <transparency>75</transparency>
+         <value>1.5</value>
+         <color>blue</color>
+      </sapphire>
+</gems>
