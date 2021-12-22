@@ -1,33 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gems>
     <gem id="1">
-        <name>star_ruby</name>
+        <name>star ruby</name>
         <preciousness>PRECIOUS</preciousness>
         <origin>Myanmar</origin>
         <transparency>5</transparency>
         <value>1</value>
     </gem>
     <gem id="2">
-        <name>colombian_emerald</name>
+        <name>Colombian emerald</name>
         <preciousness>SEMIPRECIOUS</preciousness>
         <origin>Colombia</origin>
         <transparency>20</transparency>
         <value>2</value>
     </gem>
     <diamond id="3">
-         <name>white_diamond</name>
+         <name>white diamond</name>
          <preciousness>PRECIOUS</preciousness>
          <origin>Botswana</origin>
          <transparency>50</transparency>
          <value>0.5</value>
          <crystal_shape>OCTAHEDRAL</crystal_shape>
     </diamond>
-    <sapphire id="4">
-         <name>blue_sapphire</name>
+    <diamond id="4">
+         <name>blue diamond</name>
+         <preciousness>PRECIOUS</preciousness>
+         <origin>South Africa</origin>
+         <transparency>90</transparency>
+         <value>0.75</value>
+         <crystal_shape>CUBIC</crystal_shape>
+    </diamond>
+    <sapphire id="5">
+         <name>blue sapphire</name>
          <preciousness>SEMIPRECIOUS</preciousness>
          <origin>Australia</origin>
          <transparency>75</transparency>
          <value>1.5</value>
          <color>blue</color>
+    </sapphire>
+    <sapphire id="6">
+         <name>pink sapphire</name>
+         <preciousness>SEMIPRECIOUS</preciousness>
+         <origin>Thailand</origin>
+         <transparency>80</transparency>
+         <value>1.25</value>
+         <color>pink</color>
     </sapphire>
 </gems>
