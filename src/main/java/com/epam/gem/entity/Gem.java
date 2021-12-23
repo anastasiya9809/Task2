@@ -1,11 +1,20 @@
 package com.epam.gem.entity;
 
+import javax.xml.bind.annotation.*;
+
+@XmlRootElement(name = "gem")
 public class Gem {
+    @XmlAttribute
     private int id;
+    @XmlElement
     private String name;
+    @XmlElement
     private Preciousness preciousness;
+    @XmlElement
     private String origin;
+    @XmlElement
     private double transparency;
+    @XmlElement
     private double value;
 
     public Gem() {}
@@ -59,5 +68,17 @@ public class Gem {
                 && name.equals(gem.name)
                 && preciousness == gem.preciousness
                 && origin.equals(gem.origin);
+    }
+
+    @Override
+    public String toString() {
+        return "Gem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", preciousness=" + preciousness +
+                ", origin='" + origin + '\'' +
+                ", transparency=" + transparency +
+                ", value=" + value +
+                '}';
     }
 }

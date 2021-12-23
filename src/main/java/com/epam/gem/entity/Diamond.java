@@ -1,7 +1,12 @@
 package com.epam.gem.entity;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "diamond")
 public class Diamond extends Gem {
 
+    @XmlElement(name = "crystal_shape")
     private CrystalShape crystalShape;
 
     public Diamond() {}
