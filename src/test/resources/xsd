@@ -1,0 +1,63 @@
+<?xml version = "1.0"?>
+
+<xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+    <xs:element name = "gems">
+        <xs:complexType>
+            <xs:choice minOccurs = "0" maxOccurs = "unbounded">
+                    <xs:element name = "gem" type = "gemType" minOccurs = "0"
+                    maxOccurs = "unbounded"/>
+                    <xs:element name = "diamond" type = "diamondType" minOccurs = "0"
+                    maxOccurs = "unbounded"/>
+                    <xs:element name = "sapphire" type = "sapphireType" minOccurs = "0"
+                    maxOccurs = "unbounded"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name = "gemType">
+        <xs:sequence>
+            <xs:element name = "name" type = "xs:string"/>
+            <xs:element name = "preciousness" type = "preciousnessType"/>
+            <xs:element name = "origin" type = "xs:string"/>
+            <xs:element name = "transparency" type = "xs:decimal"/>
+            <xs:element name = "value" type = "xs:decimal"/>
+        </xs:sequence>
+        <xs:attribute name = "id" type = "xs:positiveInteger"/>
+    </xs:complexType>
+
+    <xs:simpleType name = "preciousnessType">
+        <xs:restriction base = "xs:string">
+            <xs:enumeration value = "PRECIOUS"/>
+            <xs:enumeration value = "SEMIPRECIOUS"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="diamondType">
+        <xs:complexContent>
+            <xs:extension base="gemType">
+                <xs:sequence>
+                    <xs:element name="crystal_shape" type="crystalShapeType" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name = "crystalShapeType">
+        <xs:restriction base = "xs:string">
+            <xs:enumeration value = "OCTAHEDRAL"/>
+            <xs:enumeration value = "DODECAHEDRAL"/>
+            <xs:enumeration value = "HEXOCTAHEDRAL"/>
+            <xs:enumeration value = "CUBIC"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name = "sapphireType">
+            <xs:complexContent>
+                <xs:extension base = "gemType">
+                    <xs:sequence>
+                        <xs:element name = "color" type = "xs:string"/>
+                    </xs:sequence>
+                </xs:extension>
+            </xs:complexContent>
+    </xs:complexType>
+</xs:schema>
