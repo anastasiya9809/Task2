@@ -1,9 +1,7 @@
 package com.epam.gem.entity;
 
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "sapphire")
 public class Sapphire extends Gem {
 
     @XmlElement

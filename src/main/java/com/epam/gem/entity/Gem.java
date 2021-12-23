@@ -2,7 +2,6 @@ package com.epam.gem.entity;
 
 import javax.xml.bind.annotation.*;
 
-@XmlRootElement(name = "gem")
 public class Gem {
     @XmlAttribute
     private int id;
