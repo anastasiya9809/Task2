@@ -68,16 +68,4 @@ public class Gem {
                 && preciousness == gem.preciousness
                 && origin.equals(gem.origin);
     }
-
-    @Override
-    public String toString() {
-        return "Gem{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", preciousness=" + preciousness +
-                ", origin='" + origin + '\'' +
-                ", transparency=" + transparency +
-                ", value=" + value +
-                '}';
-    }
 }
