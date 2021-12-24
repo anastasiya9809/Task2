@@ -19,7 +19,7 @@
             <xs:element name = "name" type = "xs:string"/>
             <xs:element name = "preciousness" type = "preciousnessType"/>
             <xs:element name = "origin" type = "xs:string"/>
-            <xs:element name = "transparency" type = "xs:decimal"/>
+            <xs:element name = "transparency" type = "transparencyType"/>
             <xs:element name = "value" type = "xs:decimal"/>
         </xs:sequence>
         <xs:attribute name = "id" type = "xs:positiveInteger"/>
@@ -29,6 +29,13 @@
         <xs:restriction base = "xs:string">
             <xs:enumeration value = "PRECIOUS"/>
             <xs:enumeration value = "SEMIPRECIOUS"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name = "transparencyType">
+        <xs:restriction base = "xs:decimal">
+            <xs:minInclusive value = "0"/>
+            <xs:maxInclusive value = "100"/>
         </xs:restriction>
     </xs:simpleType>
 
