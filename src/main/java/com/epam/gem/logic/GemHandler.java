@@ -71,10 +71,11 @@ public class GemHandler extends DefaultHandler {
                 CrystalShape crystalShape = CrystalShape.valueOf(crystalShapeString);
                 diamond.setCrystalShape(crystalShape);
                 break;
-            case "color":
+            case "refractive_index":
                 Sapphire sapphire = getCurrentSapphire();
-                String color = currentField.toString();
-                sapphire.setColor(color);
+                String refractiveIndexString = currentField.toString();
+                double refractiveIndex = Double.parseDouble(refractiveIndexString);
+                sapphire.setRefractiveIndex(refractiveIndex);
                 break;
         }
     }
@@ -104,6 +105,15 @@ public class GemHandler extends DefaultHandler {
         String idString = attributes.getValue(0);
         int id = Integer.parseInt(idString);
         gem.setId(id);
+
+        String color = attributes.getValue(1);
+        if (color != null) {
+            gem.setColor(color);
+        } else {
+            String defaultColor = "color not specified";
+            gem.setColor(defaultColor);
+        }
+
         gems.add(gem);
     }
 

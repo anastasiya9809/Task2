@@ -68,8 +68,9 @@ public class ParserDOM {
             Sapphire sapphire = new Sapphire();
             setGemFields(sapphire, element);
 
-            String color = getValue(element, "color");
-            sapphire.setColor(color);
+            String refractiveIndexString = getValue(element, "refractive_index");
+            double refractiveIndex = Double.parseDouble(refractiveIndexString);
+            sapphire.setRefractiveIndex(refractiveIndex);
 
             gems.add(sapphire);
         }
@@ -87,6 +88,14 @@ public class ParserDOM {
         String idString = element.getAttribute("id");
         int id = Integer.parseInt(idString);
         gem.setId(id);
+
+        String color = element.getAttribute("color");
+        if (!color.isEmpty()) {
+            gem.setColor(color);
+        } else {
+            String defaultColor = "color not specified";
+            gem.setColor(defaultColor);
+        }
 
         String name = getValue(element, "name");
         gem.setName(name);

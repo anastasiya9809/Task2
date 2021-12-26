@@ -1,10 +1,14 @@
 package com.epam.gem.entity;
 
 import javax.xml.bind.annotation.*;
+import java.util.Objects;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Gem {
     @XmlAttribute
     private int id;
+    @XmlAttribute
+    private String color;
     @XmlElement
     private String name;
     @XmlElement
@@ -18,9 +22,10 @@ public class Gem {
 
     public Gem() {}
 
-    public Gem(int id, String name, Preciousness preciousness, String origin,
+    public Gem(int id, String color, String name, Preciousness preciousness, String origin,
                double transparency, double value) {
         this.id = id;
+        this.color = color;
         this.name = name;
         this.preciousness = preciousness;
         this.origin = origin;
@@ -30,6 +35,14 @@ public class Gem {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
     }
 
     public void setName(String name) {
@@ -54,18 +67,20 @@ public class Gem {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
         Gem gem = (Gem) o;
         return id == gem.id
                 && Double.compare(gem.transparency, transparency) == 0
                 && Double.compare(gem.value, value) == 0
+                && color.equals(gem.color)
                 && name.equals(gem.name)
                 && preciousness == gem.preciousness
                 && origin.equals(gem.origin);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, color, name, preciousness, origin, transparency, value);
     }
 }

@@ -13,18 +13,25 @@ import java.util.List;
 public class ParserJAXB {
 
     public List<Gem> parse(String path) throws GemException {
+
         File file = new File(path);
         JAXBContext context;
         Unmarshaller unmarshaller;
         GemList gemList;
 
-       try {
+        try {
             context = JAXBContext.newInstance(GemList.class);
             unmarshaller = context.createUnmarshaller();
             gemList = (GemList) unmarshaller.unmarshal(file);
         }
         catch (JAXBException e) {
             throw new GemException(e.getMessage(), e);
+        }
+
+        for (Gem gem : gemList.getGems()) {
+           if (gem.getColor() == null) {
+               gem.setColor("color not specified");
+           }
         }
 
         return gemList.getGems();

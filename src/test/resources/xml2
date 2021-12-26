@@ -1,7 +1,7 @@
 <?xml version = "1.0"?>
 
 <gems>
-    <gem id="1">
+    <gem>
         <name>star ruby</name>
         <preciousness>PRECIOUS</preciousness>
         <origin>Myanmar</origin>
@@ -9,14 +9,23 @@
         <value>1</value>
     </gem>
 
-    <gem id="2">
+    <gem id = "1">
+        <name>star ruby</name>
+        <preciousness>PRECIOUS</preciousness>
+        <origin>Myanmar</origin>
+        <transparency>5</transparency>
+        <value>1</value>
+    </gem>
+
+    <gem id = "2" color = "green">
         <name>Colombian emerald</name>
+        <preciousness>SEMIPRECIOUS</preciousness>
         <origin>Colombia</origin>
         <transparency>20</transparency>
         <value>2</value>
     </gem>
 
-    <diamond id="3">
+    <diamond id = "3" color = "white">
          <name>white diamond</name>
          <preciousness>PRECIOUS</preciousness>
          <origin>Botswana</origin>
@@ -25,7 +34,7 @@
          <crystal_shape>OCTAHEDRAL</crystal_shape>
     </diamond>
 
-    <diamond id="4">
+    <diamond id = "4" color = "blue">
          <name>blue diamond</name>
          <preciousness>PRECIOUS</preciousness>
          <origin>South Africa</origin>
@@ -34,21 +43,21 @@
          <crystal_shape>CUBIC</crystal_shape>
     </diamond>
 
-    <sapphire id="5">
+    <sapphire id = "5" color = "blue">
          <name>blue sapphire</name>
          <preciousness>SEMIPRECIOUS</preciousness>
          <origin>Australia</origin>
          <transparency>75</transparency>
          <value>1.5</value>
-         <color>blue</color>
+         <refractive_index>1.765</refractive_index>
     </sapphire>
 
-    <sapphire id="6">
+    <sapphire id = "6" color = "pink">
          <name>pink sapphire</name>
          <preciousness>SEMIPRECIOUS</preciousness>
          <origin>Thailand</origin>
          <transparency>80</transparency>
          <value>1.25</value>
-         <color>pink</color>
+         <refractive_index>1.766</refractive_index>
     </sapphire>
 </gems>

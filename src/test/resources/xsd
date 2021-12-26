@@ -4,12 +4,12 @@
     <xs:element name = "gems">
         <xs:complexType>
             <xs:choice minOccurs = "0" maxOccurs = "unbounded">
-                    <xs:element name = "gem" type = "gemType" minOccurs = "0"
-                    maxOccurs = "unbounded"/>
-                    <xs:element name = "diamond" type = "diamondType" minOccurs = "0"
-                    maxOccurs = "unbounded"/>
-                    <xs:element name = "sapphire" type = "sapphireType" minOccurs = "0"
-                    maxOccurs = "unbounded"/>
+                <xs:element name = "gem" type = "gemType" minOccurs = "0"
+                maxOccurs = "unbounded"/>
+                <xs:element name = "diamond" type = "diamondType" minOccurs = "0"
+                maxOccurs = "unbounded"/>
+                <xs:element name = "sapphire" type = "sapphireType" minOccurs = "0"
+                maxOccurs = "unbounded"/>
             </xs:choice>
         </xs:complexType>
     </xs:element>
@@ -22,7 +22,8 @@
             <xs:element name = "transparency" type = "transparencyType"/>
             <xs:element name = "value" type = "xs:decimal"/>
         </xs:sequence>
-        <xs:attribute name = "id" type = "xs:positiveInteger"/>
+        <xs:attribute name = "id" type = "xs:positiveInteger" use = "required"/>
+        <xs:attribute name = "color" type = "xs:string" default = "color not specified"/>
     </xs:complexType>
 
     <xs:simpleType name = "preciousnessType">
@@ -43,7 +44,7 @@
         <xs:complexContent>
             <xs:extension base="gemType">
                 <xs:sequence>
-                    <xs:element name="crystal_shape" type="crystalShapeType" />
+                    <xs:element name = "crystal_shape" type = "crystalShapeType" />
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -62,9 +63,16 @@
             <xs:complexContent>
                 <xs:extension base = "gemType">
                     <xs:sequence>
-                        <xs:element name = "color" type = "xs:string"/>
+                        <xs:element name = "refractive_index" type = "refractiveIndexType"/>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>
     </xs:complexType>
+
+    <xs:simpleType name = "refractiveIndexType">
+        <xs:restriction base = "xs:decimal">
+            <xs:minInclusive value = "1.762"/>
+            <xs:maxInclusive value = "1.770"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>

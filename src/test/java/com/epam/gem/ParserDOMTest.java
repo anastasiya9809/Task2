@@ -13,18 +13,18 @@ public class ParserDOMTest {
     private static final String VALID_PATH = "C:\\Users\\aausi\\Documents\\Task2\\src\\test\\resources\\xml";
     private static final String INVALID_PATH = "";
     private static final List<Gem> GEMS = Arrays.asList(
-            new Gem(1, "star ruby", Preciousness.PRECIOUS, "Myanmar",
+            new Gem(1, "color not specified","star ruby", Preciousness.PRECIOUS, "Myanmar",
                     5, 1),
-            new Gem(2, "Colombian emerald", Preciousness.SEMIPRECIOUS, "Colombia",
+            new Gem(2, "green","Colombian emerald", Preciousness.SEMIPRECIOUS, "Colombia",
                     20, 2),
-            new Diamond(3, "white diamond", Preciousness.PRECIOUS, "Botswana",
+            new Diamond(3, "white", "white diamond", Preciousness.PRECIOUS, "Botswana",
                     50, 0.5, CrystalShape.OCTAHEDRAL),
-            new Diamond(4, "blue diamond", Preciousness.PRECIOUS, "South Africa",
+            new Diamond(4, "blue", "blue diamond", Preciousness.PRECIOUS, "South Africa",
                     90, 0.75, CrystalShape.CUBIC),
-            new Sapphire(5, "blue sapphire", Preciousness.SEMIPRECIOUS, "Australia",
-                    75, 1.5, "blue"),
-            new Sapphire(6, "pink sapphire", Preciousness.SEMIPRECIOUS, "Thailand",
-                    80, 1.25, "pink"));
+            new Sapphire(5, "blue", "blue sapphire", Preciousness.SEMIPRECIOUS, "Australia",
+                    75, 1.5, 1.765),
+            new Sapphire(6, "pink", "pink sapphire", Preciousness.SEMIPRECIOUS, "Thailand",
+                    80, 1.25, 1.766));
 
     @Test
     public void testParseShouldParseWhenPathValid() throws GemException {
