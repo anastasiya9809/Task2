@@ -1,0 +1,48 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+
+<gems xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+    <diamond>
+             <name>yellow diamond</name>
+             <preciousness>PRECIOUS</preciousness>
+             <origin>Canada</origin>
+             <transparency>60</transparency>
+             <value>0.8</value>
+             <crystal-shape>DODECAHEDRAL</crystal-shape>
+    </diamond>
+
+    <diamond id = "3">
+         <name>white diamond</name>
+         <preciousness>PRECIOUS</preciousness>
+         <origin>Botswana</origin>
+         <transparency>50</transparency>
+         <value>0.5</value>
+         <crystal-shape>OCTAHEDRAL</crystal-shape>
+    </diamond>
+
+    <diamond id = "4" color = "blue">
+         <name>blue diamond</name>
+         <preciousness>PRECIOUS</preciousness>
+         <origin>South Africa</origin>
+         <transparency>90</transparency>
+         <value>0.75</value>
+         <crystal-shape>CUBIC</crystal-shape>
+    </diamond>
+
+    <sapphire id = "5" color = "blue">
+         <name>blue sapphire</name>
+         <preciousness>SEMIPRECIOUS</preciousness>
+         <origin>Australia</origin>
+         <transparency>75</transparency>
+         <value>1.5</value>
+         <refractive-index>1.765</refractive-index>
+    </sapphire>
+
+    <sapphire id = "6" color = "pink">
+         <name>pink sapphire</name>
+         <preciousness>SEMIPRECIOUS</preciousness>
+         <origin>Thailand</origin>
+         <transparency>80</transparency>
+         <value>1.25</value>
+         <refractive-index>1.766</refractive-index>
+    </sapphire>
+</gems>
