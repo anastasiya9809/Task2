@@ -1,13 +1,13 @@
 package com.epam.gem.entity;
 
 import javax.xml.bind.annotation.XmlElement;
-import java.util.Objects;
 
 public class Diamond extends Gem {
 
     @XmlElement(name = "crystal_shape")
     private CrystalShape crystalShape;
 
+    //default constructor required for parse method in GemJaxbParser class
     public Diamond() {}
 
     public Diamond(int id, String color, String name, Preciousness preciousness, String origin,
@@ -16,27 +16,25 @@ public class Diamond extends Gem {
         this.crystalShape = crystalShape;
     }
 
-    public void setCrystalShape(CrystalShape crystalShape) {
-        this.crystalShape = crystalShape;
-    }
-
     @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
-        if (!super.equals(o)) {
+        if (!super.equals(object)) {
             return false;
         }
-        Diamond diamond = (Diamond) o;
+        Diamond diamond = (Diamond) object;
         return crystalShape == diamond.crystalShape;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(crystalShape);
+        int result = super.hashCode();
+        result = 31 * result + crystalShape.hashCode();
+        return result;
     }
 }

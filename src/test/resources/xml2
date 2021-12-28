@@ -1,31 +1,16 @@
-<?xml version = "1.0"?>
+<?xml version = "1.0" encoding = "utf-8"?>
 
-<gems>
-    <gem>
-        <name>star ruby</name>
-        <preciousness>PRECIOUS</preciousness>
-        <origin>Myanmar</origin>
-        <transparency>5</transparency>
-        <value>1</value>
-    </gem>
+<gems xmlns:xs = "http://www.w3.org/2001/XMLSchema">
+    <diamond>
+             <name>yellow diamond</name>
+             <preciousness>PRECIOUS</preciousness>
+             <origin>Canada</origin>
+             <transparency>60</transparency>
+             <value>0.8</value>
+             <crystal_shape>DODECAHEDRAL</crystal_shape>
+    </diamond>
 
-    <gem id = "1">
-        <name>star ruby</name>
-        <preciousness>PRECIOUS</preciousness>
-        <origin>Myanmar</origin>
-        <transparency>5</transparency>
-        <value>1</value>
-    </gem>
-
-    <gem id = "2" color = "green">
-        <name>Colombian emerald</name>
-        <preciousness>SEMIPRECIOUS</preciousness>
-        <origin>Colombia</origin>
-        <transparency>20</transparency>
-        <value>2</value>
-    </gem>
-
-    <diamond id = "3" color = "white">
+    <diamond id = "3">
          <name>white diamond</name>
          <preciousness>PRECIOUS</preciousness>
          <origin>Botswana</origin>

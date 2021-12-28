@@ -11,6 +11,24 @@ public class GemHandler extends DefaultHandler {
 
     private List<Gem> gems;
     private StringBuilder currentField;
+    private int id;
+    private String color;
+    private String name;
+    private Preciousness preciousness;
+    private String origin;
+    private double transparency;
+    private double value;
+    private CrystalShape crystalShape;
+    private double refractiveIndex;
+    private static final String DIAMOND = "diamond";
+    private static final String SAPPHIRE = "sapphire";
+    private static final String NAME = "name";
+    private static final String PRECIOUSNESS = "preciousness";
+    private static final String ORIGIN = "origin";
+    private static final String TRANSPARENCY = "transparency";
+    private static final String VALUE = "value";
+    private static final String CRYSTAL_SHAPE = "crystal_shape";
+    private static final String REFRACTIVE_INDEX = "refractive_index";
 
     @Override
     public void startDocument() {
@@ -18,64 +36,46 @@ public class GemHandler extends DefaultHandler {
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attributes attributes) {
-        switch(qName) {
-            case "gem":
-                addGemToList(new Gem(), attributes);
-                break;
-            case "diamond":
-                addGemToList(new Diamond(), attributes);
-                break;
-            case "sapphire":
-                addGemToList(new Sapphire(), attributes);
-                break;
+    public void startElement(String uri, String localName, String qualifiedName, Attributes attributes) {
+        if (DIAMOND.equals(qualifiedName) || SAPPHIRE.equals(qualifiedName)) {
+                setAttributes(attributes);
         }
     }
 
     @Override
-    public void endElement(String uri, String localName, String qName) {
-        Gem gem;
-
-        switch(qName) {
-            case "name":
-                gem = getCurrentGem();
-                String name = currentField.toString();
-                gem.setName(name);
+    public void endElement(String uri, String localName, String qualifiedName) {
+        switch(qualifiedName) {
+            case DIAMOND:
+                gems.add(new Diamond(id, color, name, preciousness, origin, transparency, value, crystalShape));
                 break;
-            case "preciousness":
-                gem = getCurrentGem();
+            case SAPPHIRE:
+                gems.add(new Sapphire(id, color, name, preciousness, origin, transparency, value, refractiveIndex));
+                break;
+            case NAME:
+                name = currentField.toString();
+                break;
+            case PRECIOUSNESS:
                 String preciousnessString = currentField.toString();
-                Preciousness preciousness = Preciousness.valueOf(preciousnessString);
-                gem.setPreciousness(preciousness);
+                preciousness = Preciousness.valueOf(preciousnessString);
                 break;
-            case "origin":
-                gem = getCurrentGem();
-                String origin = currentField.toString();
-                gem.setOrigin(origin);
+            case ORIGIN:
+                origin = currentField.toString();
                 break;
-            case "transparency":
-                gem = getCurrentGem();
+            case TRANSPARENCY:
                 String transparencyString = currentField.toString();
-                double transparency = Double.parseDouble(transparencyString);
-                gem.setTransparency(transparency);
+                transparency = Double.parseDouble(transparencyString);
                 break;
-            case "value":
-                gem = getCurrentGem();
+            case VALUE:
                 String valueString = currentField.toString();
-                double value = Double.parseDouble(valueString);
-                gem.setValue(value);
+                value = Double.parseDouble(valueString);
                 break;
-            case "crystal_shape":
-                Diamond diamond = getCurrentDiamond();
+            case CRYSTAL_SHAPE:
                 String crystalShapeString = currentField.toString();
-                CrystalShape crystalShape = CrystalShape.valueOf(crystalShapeString);
-                diamond.setCrystalShape(crystalShape);
+                crystalShape = CrystalShape.valueOf(crystalShapeString);
                 break;
-            case "refractive_index":
-                Sapphire sapphire = getCurrentSapphire();
+            case REFRACTIVE_INDEX:
                 String refractiveIndexString = currentField.toString();
-                double refractiveIndex = Double.parseDouble(refractiveIndexString);
-                sapphire.setRefractiveIndex(refractiveIndex);
+                refractiveIndex = Double.parseDouble(refractiveIndexString);
                 break;
         }
     }
@@ -86,35 +86,14 @@ public class GemHandler extends DefaultHandler {
         currentField.append(ch, start, length);
     }
 
-    public Gem getCurrentGem() {
-        int lastIndex = gems.size() - 1;
-        return gems.get(lastIndex);
-    }
-
-    public Diamond getCurrentDiamond() {
-        int lastIndex = gems.size() - 1;
-        return (Diamond)gems.get(lastIndex);
-    }
-
-    public Sapphire getCurrentSapphire() {
-        int lastIndex = gems.size() - 1;
-        return (Sapphire)gems.get(lastIndex);
-    }
-
-    public void addGemToList(Gem gem, Attributes attributes){
+    public void setAttributes(Attributes attributes){
         String idString = attributes.getValue(0);
-        int id = Integer.parseInt(idString);
-        gem.setId(id);
+        id = Integer.parseInt(idString);
 
-        String color = attributes.getValue(1);
-        if (color != null) {
-            gem.setColor(color);
-        } else {
-            String defaultColor = "color not specified";
-            gem.setColor(defaultColor);
+        color = attributes.getValue(1);
+        if (color == null) {
+            color = "color not specified";
         }
-
-        gems.add(gem);
     }
 
     public List<Gem> getGems() {

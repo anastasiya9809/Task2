@@ -11,7 +11,7 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
-public class XMLValidator {
+public class XmlValidator {
 
     public boolean isValid(String xmlPath, String xsdPath) throws GemException {
         SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
@@ -21,11 +21,10 @@ public class XMLValidator {
         try {
             schema = factory.newSchema(xsdFile);
             Validator validator = schema.newValidator();
-
             File xmlFile = new File(xmlPath);
             StreamSource source = new StreamSource(xmlFile);
-
             validator.validate(source);
+            return true;
         }
         catch (SAXException e) {
             return false;
@@ -33,7 +32,5 @@ public class XMLValidator {
         catch (IOException e) {
             throw new GemException(e.getMessage(), e);
         }
-
-        return true;
     }
 }

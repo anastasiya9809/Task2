@@ -1,11 +1,9 @@
-<?xml version = "1.0"?>
+<?xml version = "1.0" encoding = "utf-8"?>
 
 <xs:schema xmlns:xs = "http://www.w3.org/2001/XMLSchema">
     <xs:element name = "gems">
         <xs:complexType>
             <xs:choice minOccurs = "0" maxOccurs = "unbounded">
-                <xs:element name = "gem" type = "gemType" minOccurs = "0"
-                maxOccurs = "unbounded"/>
                 <xs:element name = "diamond" type = "diamondType" minOccurs = "0"
                 maxOccurs = "unbounded"/>
                 <xs:element name = "sapphire" type = "sapphireType" minOccurs = "0"

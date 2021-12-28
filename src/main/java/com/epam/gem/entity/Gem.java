@@ -1,7 +1,6 @@
 package com.epam.gem.entity;
 
 import javax.xml.bind.annotation.*;
-import java.util.Objects;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Gem {
@@ -20,6 +19,7 @@ public class Gem {
     @XmlElement
     private double value;
 
+    //default constructor required for parse method in GemJaxbParser class
     public Gem() {}
 
     public Gem(int id, String color, String name, Preciousness preciousness, String origin,
@@ -33,43 +33,48 @@ public class Gem {
         this.value = value;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
+    public int getId() {
+        return id;
     }
 
     public String getColor() {
         return color;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    //setter method required for getList() method in Gems class, to set default color value, if needed
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public void setPreciousness(Preciousness preciousness) {
-        this.preciousness = preciousness;
+    public String getName() {
+        return name;
     }
 
-    public void setOrigin(String origin) {
-        this.origin = origin;
+    public Preciousness getPreciousness() {
+        return preciousness;
     }
 
-    public void setTransparency(double transparency) {
-        this.transparency = transparency;
+    public String getOrigin() {
+        return origin;
     }
 
-    public void setValue(double value) {
-        this.value = value;
+    public double getTransparency() {
+        return transparency;
+    }
+
+    public double getValue() {
+        return value;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Gem gem = (Gem) o;
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+        Gem gem = (Gem) object;
         return id == gem.id
                 && Double.compare(gem.transparency, transparency) == 0
                 && Double.compare(gem.value, value) == 0
@@ -81,6 +86,14 @@ public class Gem {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, color, name, preciousness, origin, transparency, value);
+        int result = 17;
+        result = 31 * result + id;
+        result = 31 * result + color.hashCode();
+        result = 31 * result + name.hashCode();
+        result = 31 * result + preciousness.hashCode();
+        result = 31 * result + origin.hashCode();
+        result = 31 * result + Double.hashCode(transparency);
+        result = 31 * result + Double.hashCode(value);
+        return result;
     }
 }

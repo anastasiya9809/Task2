@@ -10,8 +10,9 @@ import javax.xml.parsers.SAXParserFactory;
 import java.io.IOException;
 import java.util.List;
 
-public class ParserSAX {
+public class GemSaxParser implements Parser {
 
+    @Override
     public List<Gem> parse(String path) throws GemException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         GemHandler handler = new GemHandler();
@@ -19,11 +20,10 @@ public class ParserSAX {
         try {
             SAXParser parser = factory.newSAXParser();
             parser.parse(path, handler);
+            return handler.getGems();
         }
-        catch (ParserConfigurationException | SAXException | IOException e) {
-            throw new GemException(e.getMessage(), e);
+        catch (ParserConfigurationException | SAXException | IOException exception) {
+            throw new GemException(exception.getMessage(), exception);
         }
-
-        return handler.getGems();
     }
 }
