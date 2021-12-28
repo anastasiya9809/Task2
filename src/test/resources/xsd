@@ -42,7 +42,7 @@
         <xs:complexContent>
             <xs:extension base="gemType">
                 <xs:sequence>
-                    <xs:element name = "crystal_shape" type = "crystalShapeType" />
+                    <xs:element name = "crystal-shape" type = "crystalShapeType" />
                 </xs:sequence>
             </xs:extension>
         </xs:complexContent>
@@ -61,7 +61,7 @@
             <xs:complexContent>
                 <xs:extension base = "gemType">
                     <xs:sequence>
-                        <xs:element name = "refractive_index" type = "refractiveIndexType"/>
+                        <xs:element name = "refractive-index" type = "refractiveIndexType"/>
                     </xs:sequence>
                 </xs:extension>
             </xs:complexContent>

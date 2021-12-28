@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 public class Diamond extends Gem {
 
-    @XmlElement(name = "crystal_shape")
+    @XmlElement(name = "crystal-shape")
     private CrystalShape crystalShape;
 
     //default constructor required for parse method in GemJaxbParser class

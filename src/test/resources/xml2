@@ -7,7 +7,7 @@
              <origin>Canada</origin>
              <transparency>60</transparency>
              <value>0.8</value>
-             <crystal_shape>DODECAHEDRAL</crystal_shape>
+             <crystal-shape>DODECAHEDRAL</crystal-shape>
     </diamond>
 
     <diamond id = "3">
@@ -16,7 +16,7 @@
          <origin>Botswana</origin>
          <transparency>50</transparency>
          <value>0.5</value>
-         <crystal_shape>OCTAHEDRAL</crystal_shape>
+         <crystal-shape>OCTAHEDRAL</crystal-shape>
     </diamond>
 
     <diamond id = "4" color = "blue">
@@ -25,7 +25,7 @@
          <origin>South Africa</origin>
          <transparency>90</transparency>
          <value>0.75</value>
-         <crystal_shape>CUBIC</crystal_shape>
+         <crystal-shape>CUBIC</crystal-shape>
     </diamond>
 
     <sapphire id = "5" color = "blue">
@@ -34,7 +34,7 @@
          <origin>Australia</origin>
          <transparency>75</transparency>
          <value>1.5</value>
-         <refractive_index>1.765</refractive_index>
+         <refractive-index>1.765</refractive-index>
     </sapphire>
 
     <sapphire id = "6" color = "pink">
@@ -43,6 +43,6 @@
          <origin>Thailand</origin>
          <transparency>80</transparency>
          <value>1.25</value>
-         <refractive_index>1.766</refractive_index>
+         <refractive-index>1.766</refractive-index>
     </sapphire>
 </gems>

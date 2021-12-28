@@ -27,8 +27,8 @@ public class GemDomParser implements Parser {
     private static final String ORIGIN = "origin";
     private static final String TRANSPARENCY = "transparency";
     private static final String VALUE = "value";
-    private static final String CRYSTAL_SHAPE = "crystal_shape";
-    private static final String REFRACTIVE_INDEX = "refractive_index";
+    private static final String CRYSTAL_SHAPE = "crystal-shape";
+    private static final String REFRACTIVE_INDEX = "refractive-index";
 
     @Override
     public List<Gem> parse(String path) throws GemException {

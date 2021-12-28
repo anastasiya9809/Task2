@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlElement;
 
 public class Sapphire extends Gem {
 
-    @XmlElement(name = "refractive_index")
+    @XmlElement(name = "refractive-index")
     private double refractiveIndex;
 
     //default constructor required for parse method in GemJaxbParser class
